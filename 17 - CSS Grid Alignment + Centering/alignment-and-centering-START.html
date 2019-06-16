@@ -63,14 +63,19 @@
       align-self:
       justify-self:
 
-      justify-* is row axis
-      align-* is column axis
+      justify-* is row (x) axis
+      align-* is column (y) axis
     */
 
     .container {
       display: grid;
       grid-gap: 20px;
       grid-template-columns: repeat(10, 1fr);
+      justify-items: center;
+    }
+
+    .itm {
+      background: white;
     }
   </style>
 </body>
