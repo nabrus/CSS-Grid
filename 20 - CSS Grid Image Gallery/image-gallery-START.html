@@ -47,7 +47,7 @@
 
     .close {
       background: none;
-      color: white;
+      color: black;
       border: 0;
     }
 
@@ -81,7 +81,7 @@
       display: grid;
       align-items: center;
       justify-items: center;
-      transition: 0.5s;
+      transition: 0.2s;
       transform: translateY(100%);
     }
 
@@ -136,9 +136,11 @@
 
     .overlay.open {
       display: grid;
+      align-items: center;
+      justify-items: center;
     }
 
-    .overlay figure {
+    .overlay-inner {
       background: white;
       width: 700px;
       padding: 20px;
@@ -172,6 +174,16 @@
       return Math.floor(Math.random() * limit) + 1;
     }
 
+    function handleClick(e) {
+      const src = e.currentTarget.querySelector("img").src;
+      overlayImage.src = src;
+      overlay.classList.add("open");
+    }
+
+    function close() {
+      overlay.classList.remove("open");
+    }
+
     // Creating an array of random arrays... 
     // Use Array.from and pass it an obj with a length property on it to create
     // an array with 50 blank spots
@@ -183,6 +195,11 @@
     
     gallery.innerHTML = html;
 
+    const items = document.querySelectorAll(".item");
+
+    items.forEach(item => item.addEventListener("click", handleClick));
+    
+    overlayClose.addEventListener("click", close);
 
   </script>
 </body>
