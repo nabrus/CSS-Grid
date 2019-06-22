@@ -70,6 +70,32 @@
       grid-row: 1 / -1;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+    }
+
+    .item__overlay {
+      background: #ffc60032;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      position: relative;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      transition: 0.5s;
+      transform: translateY(100%);
+    }
+
+    .item__overlay button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+    }
+
+    .item:hover .item__overlay {
+      transform: translateY(0);
     }
 
     .item.v2 {
@@ -135,7 +161,7 @@
         <div class="item h${h} v${v}">
           <img src="images/${randomNum(12)}.jpg">
           <div class="item__overlay">
-            <button>View -></button>
+            <button>View →</button>
           </div>
         </div>
       `;
@@ -156,6 +182,7 @@
     const html = digits.map(generateHTML).join("");
     
     gallery.innerHTML = html;
+
 
   </script>
 </body>
