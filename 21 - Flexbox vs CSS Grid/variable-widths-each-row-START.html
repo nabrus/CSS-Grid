@@ -21,10 +21,16 @@
     <div class="item">Short</div>
   </div>
   <style>
-    .flex-container {}
+    /* Flexbox better for this situation */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
 
     .flex-container>* {
       margin: 10px;
+      /* flex: 1; flex grow used to fill items in */
     }
   </style>
 </body>
