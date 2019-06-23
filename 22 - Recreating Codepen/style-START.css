@@ -144,7 +144,6 @@ h6 {
 /* 
   PREVIEW
 */
-
 .preview {
   display: grid;
 }
@@ -152,7 +151,6 @@ h6 {
 /*
   FOOTER
 */
-
 .settings {
   padding: 5px;
   background: black;
