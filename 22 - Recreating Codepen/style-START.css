@@ -1,7 +1,13 @@
+/*
+  CUSTOM PROPERTIES
+*/
 :root {
   --grey: #343436;
 }
 
+/*
+  GENERAL STYLING
+*/
 html {
   box-sizing: border-box;
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
@@ -38,7 +44,8 @@ h6 {
 .codepen {
   display: grid;
   grid-template-rows: auto 1fr 1fr auto;
-  height: 100vh;;
+  height: 100vh;
+  color: white;
 }
 
 .codepen >* {
@@ -51,14 +58,44 @@ h6 {
 .code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
 }
 
 .editor {
   display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px
+}
+
+.editor__input {
+  resize: none;
+  background: none;
+  border: 0;
+  color: grey;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 /* 
-  HEADER
+  PEN HEADER
 */
 .pen {
   display: grid;
@@ -72,24 +109,42 @@ h6 {
   padding: 10px;
 }
 
-.pen .button {
+/* Buttons */
+
+.button {
   padding: 10px;
   color: white;
   background: var(--grey);
-  border: none;
+  border: 0;
+  border-radius: 3px;
+  font-size: 15px;
+  position: relative;
 }
 
-.pen .button--dirty {
+/* .button--dirty {
   border-top: 2px solid orange;
+} */
+
+.button--dirty:before {
+  background: orange;
+  display: block;
+  content: "";
+  height: 2px;
+  width: calc(100% - 6px); /* less three px on each side */
+  position: absolute;
+  left: 3px;
+  top: 3px;
 }
 
-/* .pen__details {
-  display: grid;
-} */
+.button--small {
+  font-size: 12px;
+  padding: 4px;
+}
 
 /* 
   PREVIEW
 */
+
 .preview {
   display: grid;
 }
@@ -97,6 +152,12 @@ h6 {
 /*
   FOOTER
 */
+
+.settings {
+  padding: 5px;
+  background: black;
+  border-top: 1px solid grey;
+}
 
 
 
