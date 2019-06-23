@@ -28,3 +28,60 @@ h6 {
   font-size: 1.5em;
 }
 
+/* MAIN CODEPEN */
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;;
+}
+
+.codepen >* {
+  border: 1px solid black;
+}
+
+/* CODE EDITORS */
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.editor {
+  display: grid;
+}
+
+/* HEADER */
+.pen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  background: black;
+  border-bottom: 5px solid #343436;
+  color: white;
+  gap: 10px;
+}
+
+.pen .button {
+  padding: 10px;
+  color: white;
+  background: #343436;
+  border: none;
+}
+
+.pen .button--dirty {
+  border-top: 2px solid orange;
+}
+
+/* .pen__details {
+  display: grid;
+} */
+
+/* PREVIEW */
+.preview {
+  display: grid;
+}
+
+/* FOOTER */
+
+
+
