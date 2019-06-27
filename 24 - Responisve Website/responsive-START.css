@@ -15,8 +15,20 @@ img {
 
 
 /**************************************
+  #wrapper
+**************************************/
+
+.wrapper {
+  display: grid;
+  gap: 20px;
+}
+
+
+
+/**************************************
   #TOP
 **************************************/
+
 .top {
   display: grid;
   gap: 20px;
@@ -127,4 +139,58 @@ img {
 
 .feature p {
   color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+/**************************************
+  #ABOUT SECTION
+**************************************/
+
+.about {
+  background: white;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-items: center;
+}
+
+
+
+/**************************************
+  #GALLERY
+**************************************/
+
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+.gallery img {
+  width: 100%;
+}
+
+.gallery h2 {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+  text-transform: uppercase; 
+}
+
+.gallery h2:before, .gallery h2:after {
+  display: block;
+  content: "";
+  height: 10px;
+  background: linear-gradient(to var(--direction, left), var(--yellow),
+  transparent);
+  /* set a var with a fallback of left */
+}
+
+.gallery h2:after {
+  --direction: right;
+  /* add direction right */
 }
